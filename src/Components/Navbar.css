@@ -1,0 +1,95 @@
+.navbar {
+  background-color: blue;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.nav-logo {
+  color: aliceblue;
+  text-decoration: none;
+  margin-left: 50px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  text-align: center;
+  justify-content: end;
+  width: 75vw;
+  list-style-type: none;
+}
+.nav-links {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 0.5 1rem;
+}
+.nav-links:hover {
+  background-color: darkblue;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+.menu-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.8rem;
+    color: aliceblue;
+    transform: translate(-100%, 50%);
+    cursor: pointer;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: -100%;
+    transition: all 0.4s ease;
+    overflow: auto;
+  }
+  .nav-menu.active {
+    background-color: aqua;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-links {
+    text-align: center;
+    padding: 4.25rem;
+    width: 100%;
+    display: table;
+  }
+  .nav-links:hover {
+    background-color: aquamarine;
+    border-radius: 0;
+    color: blue;
+  }
+  .nav-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .nav-logo {
+    font-size: 0.7rem;
+  }
+  .menu-icon {
+    font-size: 1rem;
+    transform: translate(1%, 25%);
+  }
+}
